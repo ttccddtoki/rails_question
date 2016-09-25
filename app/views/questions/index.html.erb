@@ -1,10 +1,10 @@
 <%i=0%>
-<% @question.each do |question| %>
+<% @questions.each do |question| %>
 <h1>第<%=i+=1%>問</h1>
 <%=question.problem%></br>
-  <%= @choice.each do |choice| %>
+  <%= @choices.each do |choice| %>
   <%if(question.id == choice.question_id)%>
-  <%= radio_button "question", "id", 'choice'%><%=choice.content%></br>
+  <%= radio_button "question", question.id, 'choice'%><%=choice.content%></br>
   <% end %>
   <% end %>
 <% end %>

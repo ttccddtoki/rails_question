@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @question = Question.order("RANDOM()").limit(20)
-    @choice = Choice.order("RANDOM()")
+    @questions = Question.order("RANDOM()").limit(20)
+    @choices = Choice.order("RANDOM()")
   end
 end
