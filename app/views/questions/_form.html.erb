@@ -1,0 +1,5 @@
+<%= form_for @choice do |f| %>
+<%if(question.id == f.question_id)%>
+<%= f.radio_button 'question.id', 'id', 'choice'%><%=choice.content%></br>
+<% end %>
+<% end %>
