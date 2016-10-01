@@ -1,10 +1,12 @@
+<h2>rails問題アプリ</h2>
 <%i=0%>
-<% @questions.each do |question| %>
-<h1>第<%=i+=1%>問</h1>
-<%=question.problem%></br>
-  <%= @choices.each do |choice| %>
-  <%if(question.id == choice.question_id)%>
-  <%= radio_button "question", question.id, 'choice'%><%=choice.content%></br>
+<%= form_tag('/questions/finalindex') do %>
+  <% @questions.each do |question| %>
+    <h1>第<%=i+=1%>問</h1>
+    <%=question.problem%></br>
+      <% question.choices.each do |choice| %>
+        <label><%= radio_button "question", question.id, choice.id %><%=choice.content%></label></br>
+      <% end %>
   <% end %>
-  <% end %>
+  <%= submit_tag('答え合わせ') %>
 <% end %>

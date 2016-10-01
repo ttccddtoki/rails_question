@@ -1,0 +1,25 @@
+<% right_answer_count = 0 %>
+<% @questions.each do |question| %>
+  <%= question.problem %>
+  <% choice_id = @choices_params[question.id.to_s] %>
+  あなたの答え：
+  <% if choice_id.present? %>
+    <% choice = Choice.find(choice_id) %>
+    <%= choice.content %>
+  <% else %>
+    未回答
+  <% end %>
+  <% if question.answer == choice_id.to_i %>
+  <% right_answer_count += 1 %>
+    ○</br>
+  <% else %>
+    ×
+    正答：
+    <% right_choice = question.right_choice %>
+    <%= right_choice.content %></br>
+  <% end %>
+<% end %>
+
+あなたの正解率は<%=right_answer_count%>/<%= @questions.count %>
+
+<%= link_to "もう一度勉強する！", {:controller => "questions", :action => "index"} %>

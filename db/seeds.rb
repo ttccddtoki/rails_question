@@ -7,15 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # coding: utf-8
 
-Question.create(:id => 1, :problem => "ヒトデを英語にするとどれ？")
-Question.create(:id => 2, :problem => "クマを英語にするとどれ？")
-Question.create(:id => 3, :problem => "イルカを英語にするとどれ？")
-Question.create(:id => 4, :problem => "カエルを英語にするとどれ？")
+Question.create(id: 1, :problem => "ヒトデを英語にするとどれ？", answer: 5)
+Question.create(:id => 2, :problem => "クマを英語にするとどれ？", answer: 10)
+Question.create(:id => 3, :problem => "イルカを英語にするとどれ？", answer: 15)
+Question.create(:id => 4, :problem => "カエルを英語にするとどれ？", answer: 20)
 
 Choice.create(:id => 5, :question_id => 1, :content => "Starfish")
 Choice.create(:id => 6, :question_id => 1, :content => "bear")
 Choice.create(:id => 7, :question_id => 1, :content => "Dolphin")
-Choice.create(:id => 8, :question_id => 1, :content => "Frog")
+#Choice.create(:id => 8, :question_id => 1, :content => "Frog")
 
 Choice.create(:id => 9, :question_id => 2, :content => "Starfish")
 Choice.create(:id => 10, :question_id => 2, :content => "bear")
